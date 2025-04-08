@@ -17,3 +17,8 @@ export const editApi = (parm: dish_model) => {
 export const deleteApi = (dishId: string) => {
     return http.delete(`/api/dish/${dishId}`);
 };
+
+// 删除
+export const getSelectListApi = () => {
+    return http.get("/api/dish/getSelectList");
+};

@@ -23,12 +23,16 @@
     <template #title>菜品分类</template>
   </el-menu-item>
   <el-menu-item index="/dish_manage">
-    <el-icon><Menu /></el-icon>
+    <el-icon><Grid /></el-icon>
     <template #title>菜品管理</template>
   </el-menu-item>
   <el-menu-item index="/order_manage">
     <el-icon><Monitor /></el-icon>
     <template #title>订单管理</template>
+  </el-menu-item>
+   <el-menu-item index="/ad_manage">
+    <el-icon><Finished /></el-icon>
+    <template #title>广告管理</template>
   </el-menu-item>
   <el-menu-item index="/statistic">
     <el-icon><Histogram /></el-icon>
@@ -51,7 +55,8 @@ import { Menu } from '@element-plus/icons-vue';
 import { Monitor } from '@element-plus/icons-vue';
 import { Edit } from '@element-plus/icons-vue';
 import { Tools } from '@element-plus/icons-vue';
-import { Histogram } from '@element-plus/icons-vue';
+import { Histogram, Grid , Finished } from '@element-plus/icons-vue';
+import { finished } from 'stream';
 
 //菜单收缩
 const temp_status = collapseStore()

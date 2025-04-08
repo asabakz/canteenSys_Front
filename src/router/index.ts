@@ -64,6 +64,14 @@ const routes: Array<RouteRecordRaw> = [
                 meta: {
                     title: "菜品分类"
                 }
+            },
+            {
+                path: '/ad_manage',
+                name: 'Ad_manage',
+                component: () => import('../views/ad_manage/index.vue'),
+                meta: {
+                    title: "广告管理"
+                }
             }
         ]
     }
