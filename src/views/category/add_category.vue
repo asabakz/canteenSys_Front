@@ -25,6 +25,7 @@
   </m_dia>
 </template>
 
+
 <script setup lang="ts">
 import type{ category_model } from '../../api/category/category_model.ts';
 import { nextTick, reactive,ref } from 'vue'
@@ -39,6 +40,7 @@ const addFormRef = ref<FormInstance>();
 const {m_dia_set,onClose,onConfirm,dia_display} = m_Dialog();
 
 const m_add_display = (type:string,row?:category_model)=>{
+  　　　injectDialogStyle();
       type == edit_status.ADD ? m_dia_set.title = Title.ADD : m_dia_set.title = Title.EDIT 
       console.log(type)
       m_dia_set.height = 150
@@ -55,6 +57,35 @@ const m_add_display = (type:string,row?:category_model)=>{
       addFormRef.value?.resetFields()
   
 }
+//优先级被顶掉了，直接用函数写样式
+const injectDialogStyle = () => {
+  const styleId = 'custom-dialog-style';
+  if (document.getElementById(styleId)) return; // 避免重复插入
+
+  const style = document.createElement('style');
+  style.id = styleId;
+  style.innerHTML = `
+    .el-dialog__header {
+      margin: 0 !important;
+      padding: 0 !important;
+      border-top-left-radius: 7px !important;
+      border-top-right-radius: 7px !important;
+      background-color: #fafad2 !important;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+    }
+    .el-dialog__title {
+      color: #3e3e3de1;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+  `;
+  document.head.appendChild(style);
+};
+
 
 defineExpose({
     m_add_display
