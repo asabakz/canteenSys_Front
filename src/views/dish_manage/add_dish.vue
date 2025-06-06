@@ -70,9 +70,25 @@
             </div>
           </el-form-item>
 
-          <el-form-item prop="DishUnit" label="菜品单位">
+          <!-- <el-form-item prop="DishUnit" label="菜品单位">
+               <el-input v-model="add_model.dishUnit"></el-input>
+             </el-form-item> -->
+
+          <el-row :gutter="20">
+           <el-col :span="12" :offset="0">
+             <el-form-item prop="DishUnit" label="菜品单位">
                <el-input v-model="add_model.dishUnit"></el-input>
              </el-form-item>
+           </el-col>
+           <el-col :span="12" :offset="0">
+             <el-form-item  label="是/否上架">
+               <el-radio-group v-model="add_model.onload">
+                 <el-radio :label="0">否</el-radio>
+                 <el-radio :label="1">是</el-radio>
+               </el-radio-group>
+             </el-form-item>
+           </el-col>
+         </el-row>   
 
                  <!--菜品规格 -->
                <el-row :gutter="20">
@@ -208,7 +224,8 @@ const add_model = reactive<dish_model>({
   specs: Array<dish_specs_model>(),
   categoryId: '',
   dishName: '',
-  orderNum: ''
+  orderNum: '',
+  onload:""
 })
 // 表单验证规则
 // 表单验证规则

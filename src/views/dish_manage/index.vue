@@ -14,7 +14,7 @@
     </el-form>
     
     <!-- 表格内容 -->
-    <el-table row-key="dishId" :height = "form_height" :data="dish_data" border stripe>
+     <el-table row-key="dishId" :height = "form_height" :data="dish_data" border stripe>
 
       <!-- 规格子表，扩展显示 -->
           <el-table-column type="expand">
@@ -26,6 +26,15 @@
               </el-table>
             </template>
           </el-table-column>
+
+        <el-table-column label="是否上架" prop="onload">
+         <template #default="scope">
+           <el-tag v-if="scope.row.onload == '0'" type="danger"
+             size="small" effect="dark"> 否 </el-tag>
+           <el-tag v-else type="main" size="small"
+             effect="dark"> 是 </el-tag>
+         </template>
+        </el-table-column>
 
          <el-table-column prop="dishImage" label="菜品图片">
           <template #default="scope">

@@ -27,5 +27,6 @@ export type dish_model = {
     dishUnit: string;
     orderNum: string;
     specs: Array<dish_specs_model>;
+    onload: string;
 };
 
