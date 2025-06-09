@@ -3,7 +3,6 @@ import type { AxiosInstance, AxiosRequestConfig, AxiosResponse, AxiosRequestHead
 import { ElMessage } from 'element-plus';
 import type { InternalAxiosRequestConfig } from "axios";
 
-
 // axios请求的配置
 const config = {
     // baseURL: 'http://localhost:8089/',

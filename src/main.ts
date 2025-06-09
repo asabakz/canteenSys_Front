@@ -8,6 +8,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createPinia } from 'pinia'
 import { zhCn } from 'element-plus/es/locales.mjs'
 import comfirm_dia from './tools/comfirm_dia'
+import * as echarts from 'echarts'
 const pinia = createPinia()
 
 const app = createApp(App)
@@ -18,3 +19,4 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 //全局注册
 app.config.globalProperties.$comfirmDia = comfirm_dia
+app.config.globalProperties.$echarts = echarts;

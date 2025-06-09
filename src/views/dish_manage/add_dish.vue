@@ -163,6 +163,8 @@ const {selectData,getSelect} = SelectMenu()
 // 弹框属性
 const {m_dia_set,onClose,onConfirm,dia_display} = m_Dialog();
 
+
+
 const m_add_display = (type:string,row?:dish_model)=>{
   injectDialogStyle();
     //初始化对话框
@@ -179,6 +181,7 @@ const m_add_display = (type:string,row?:dish_model)=>{
      //编辑预加载图片\菜品简介
      if(type==edit_status.EDIT&& row){
       nextTick(() =>{
+           m_dia_set.title = "编辑"
            Object.assign(add_model,row);
 
            if(add_model.dishImage){
@@ -198,6 +201,7 @@ const m_add_display = (type:string,row?:dish_model)=>{
         })
       } else {
         nextTick(()=>{
+           m_dia_set.title = "新增"
           add_model.specs=[];
           addDishSpecs()
         })
@@ -350,6 +354,8 @@ const commit = () => {
         }
     })
 }
+
+
 
 </script>
 
